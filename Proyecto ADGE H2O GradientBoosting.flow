@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "cells": [
+    {
+      "type": "cs",
+      "input": "assist"
+    },
+    {
+      "type": "cs",
+      "input": "buildModel"
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'gbm', {\"model_id\":\"xgboost-v1\",\"training_frame\":\"train_ml_ready_unido.hex\",\"nfolds\":0,\"response_column\":\"Severity\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"ntrees\":100,\"max_depth\":20,\"min_rows\":5,\"nbins\":20,\"seed\":-1,\"learn_rate\":0.1,\"sample_rate\":1,\"col_sample_rate\":1,\"score_each_iteration\":false,\"score_tree_interval\":0,\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"logloss\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"learn_rate_annealing\":1,\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"monotone_constraints\":[],\"gainslift_bins\":-1,\"auc_type\":\"AUTO\",\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"col_sample_rate_change_per_level\":1,\"max_abs_leafnode_pred\":1.7976931348623157e+308,\"pred_noise_bandwidth\":0,\"calibrate_model\":false,\"calibration_method\":\"AUTO\",\"in_training_checkpoints_tree_interval\":1,\"check_constant_response\":true,\"auto_rebalance\":true}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"xgboost-v1\""
+    },
+    {
+      "type": "cs",
+      "input": ""
+    },
+    {
+      "type": "cs",
+      "input": "buildPartialDependence"
+    },
+    {
+      "type": "cs",
+      "input": "buildPartialDependence {\"destination_key\":\"pdp-28ae6eb3-99d9-47e0-90e9-19b4c44ebdca\",\"model_id\":\"xgboost-v1\",\"frame_id\":\"test_ml_ready_unido.hex\",\"cols\":\"\",\"targets\":\"\",\"col_pairs_2dpdp\":\"\",\"nbins\":20,\"row_index\":-1}"
+    },
+    {
+      "type": "cs",
+      "input": "predict"
+    },
+    {
+      "type": "cs",
+      "input": "predict model: \"xgboost-v1\", frame: \"test_ml_ready_unido.hex\", predictions_frame: \"prediction-model-xgboost\""
+    },
+    {
+      "type": "cs",
+      "input": "inspect getPrediction model: \"xgboost-v1\", frame: \"test_ml_ready_unido.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "inspect \"Prediction\", getPrediction model: \"xgboost-v1\", frame: \"test_ml_ready_unido.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "grid inspect \"Prediction\", getPrediction model: \"xgboost-v1\", frame: \"test_ml_ready_unido.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "getCloud"
+    }
+  ]
+}
